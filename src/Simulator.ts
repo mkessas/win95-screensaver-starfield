@@ -6,6 +6,11 @@ export type SimulatorOptions = {
     Canvas: HTMLCanvasElement,
 }
 
+export type SimulatorState = {
+    Stars: number;
+    Refresh: number;
+}
+
 export class Simulator {
 
     private _stars: Star[] = [];
@@ -91,22 +96,31 @@ export class Simulator {
         this._run = true;
     }
 
-    public SpeedUp() {
+    public SpeedUp(): number  {
         if (this._refresh > 10) this._refresh -= 5;
-
+        return this._refresh;
     }
 
-    public SlowDown() {
+    public GetState(): SimulatorState {
+        return {
+            Refresh: Math.round(1000 / this._refresh),
+            Stars: this._stars.length,
+        }
+    }
+
+    public SlowDown(): number {
         if (this._refresh < 120) this._refresh += 5;
-
+        return this._refresh;
     }
 
-    public AddStars() {
+    public AddStars(): number {
         this._maxStars += 10;
+        return this._maxStars;
     }
 
-    public RemoveStars() {
+    public RemoveStars(): number  {
         if (this._maxStars >= 10) this._maxStars -= 10;
+        return this._maxStars;
     }
 
     public Resize(w: number, h: number) {

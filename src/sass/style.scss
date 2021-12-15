@@ -1,5 +1,47 @@
+body {
+  font-family: Consolas, fixed;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: white;
+}
 canvas {
-    background-color: black;;
-    // width: 100vw;
-    // height: 100vh;
+  background-color: black;
+}
+
+.control {
+  position: absolute;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+
+  & > div {
+      display: flex;
+      margin-bottom: 10px;
+
+      & > span {
+          font-weight: 600;
+      }
+  }
+
+  &.visible {
+    display: block;
+  }
+
+  &-main {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 200px;
+    min-height: 300px;
+  }
+
+  &-debug {
+    top: 20px;
+    right: 20px;
+    height: 80px;
+    width: 200px;
+  }
 }

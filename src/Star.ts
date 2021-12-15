@@ -20,7 +20,7 @@ export class Star {
     private _speed: number; // speed
     public _acc: number = 1; // acceleration
     public _r: number = 1; // size of the star
-    private _cycle: number = 0; // how many epochs this star has existed
+    private _cycle: number = 1; // how many epochs this star has existed
 
     constructor() {
         this._direction = Math.random() * Math.PI * 2 - Math.PI;
@@ -30,10 +30,11 @@ export class Star {
     tick() {
         this._x = this._acc * Math.cos(this._direction);
         this._y = this._acc * Math.sin(this._direction);
-        this._acc += this._cycle++ * this._speed / 2;
-        this._r += .05;
+        this._cycle *= 1.1;
+        this._acc += this._cycle * this._speed / 2;
+        this._r += .03;
 
-        if (this._c + 0.001 * this._cycle < 1) this._c += .001 * this._cycle;
+        if (this._c + 0.002  * this._cycle < 1) this._c += .002 * this._cycle;
     }
 
     get x() { return this._x; }
