@@ -1,4 +1,4 @@
-# Starfield Simulator
+# Windows 95 Screensaver: Starfield Simulator
 
 ![image](public/images/screenshot.png)
 
