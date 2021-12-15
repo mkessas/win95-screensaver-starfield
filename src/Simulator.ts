@@ -108,4 +108,9 @@ export class Simulator {
     public RemoveStars() {
         if (this._maxStars >= 10) this._maxStars -= 10;
     }
+
+    public Resize(w: number, h: number) {
+        this._width = w;
+        this._height = h;
+    }
 }

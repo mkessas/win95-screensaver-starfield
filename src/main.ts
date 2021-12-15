@@ -15,10 +15,13 @@ const sim = new Simulator({
     Refresh: state.refresh,
 })
 
-sim.Start();
+const Resize = () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    sim.Resize(window.innerWidth, window.innerHeight);
+};
 
-const body = document.querySelector("body");
-body.addEventListener('keydown', function (e) {
+const KeyDown = (e: any) => {
 
     switch (e.key) {
         case ' ':
@@ -33,7 +36,7 @@ body.addEventListener('keydown', function (e) {
         case 'ArrowDown':
             sim.RemoveStars();
             break;
-        
+
         case 'ArrowRight':
             sim.SpeedUp();
             break;
@@ -43,5 +46,9 @@ body.addEventListener('keydown', function (e) {
             break;
     }
 
-    console.log(e);
-})
+}
+
+Resize();
+sim.Start();
+window.addEventListener('resize', Resize);
+window.addEventListener('keydown', KeyDown);
