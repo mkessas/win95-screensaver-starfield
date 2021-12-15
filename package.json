@@ -1,0 +1,39 @@
+{
+  "name": "starfield",
+  "version": "0.0.1",
+  "description": "A Starfield Simulation",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack-dev-server --port 9000 --progress --profile --color --mode development",
+    "build": "webpack --config webpack.config.js --mode production"
+  },
+  "author": "Mourad Kessas",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/jasmine": "2.8.7",
+    "@types/node": "7.0.0",
+    "awesome-typescript-loader": "5.2.0",
+    "jasmine-core": "3.1.0",
+    "tslint": "5.17.0",
+    "tslint-loader": "3.6.0",
+    "typescript": "3.5.1"
+  },
+  "dependencies": {
+    "css-loader": "^6.5.1",
+    "dart-sass": "^1.25.0",
+    "sass": "^1.45.0",
+    "sass-loader": "^12.4.0",
+    "scss": "^0.2.4",
+    "source-map-loader": "0.2.3",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  }
+}
