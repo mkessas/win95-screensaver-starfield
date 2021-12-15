@@ -4,7 +4,7 @@
   "description": "A Starfield Simulation",
   "main": "main.js",
   "scripts": {
-    "start": "webpack-dev-server --port 9000 --progress --profile --color --mode development",
+    "start": "webpack-dev-server --progress --profile --color --mode development",
     "build": "webpack --config webpack.config.js --mode production"
   },
   "author": "Mourad Kessas",

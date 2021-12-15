@@ -15,7 +15,8 @@ canvas {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   padding: 10px;
-  display: none;
+  visibility: hidden;
+  transition: all .5s ease-in-out;
 
   & > div {
       display: flex;
@@ -27,7 +28,7 @@ canvas {
   }
 
   &.visible {
-    display: block;
+    visibility: visible;
   }
 
   &-main {
